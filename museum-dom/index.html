@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louvre</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./css/vjs.css">
+    <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
+    <script src="./js/script.js"></script>
+  </head>
+  <body style="font-family:'Roboto','Forum';margin:0 auto">
+    <input type="checkbox" id="borgir" hidden>
+    <header class="dark">
+        <h1 hidden>Louvre</h1>
+        <div class="wrap">
+        <span class="logo"><img src="./assets/icons/logo.svg" alt="">LOUVRE</span>
+        <nav>
+            <ul class="menu">
+                <li><a href="#Visiting">Visiting</a></li>
+                <li><a href="#Explore">Explore</a></li>
+                <li><a href="#Video">Video</a></li>
+                <li><a href="#Gallery">Gallery</a></li>
+                <li><a href="#Tickets">Tickets</a></li>
+                <li><a href="#Contacts">Contacts</a></li>
+            </ul>
+        </nav>
+        <label for="borgir" class="borgir" hidden></label>
+    </div>
+    </header>
+    <input type="checkbox" id="booking" hidden>
+    <label for="booking" class="overlay"></label>
+    <div class="booking-cont">
+        <div class="form-wrap booking-f">
+        <label for="booking" class="close">╳</label>
+        <form>
+            <div class="left">
+                <div class="logo-b">
+                    <img src="./assets/icons/logo-b.svg" alt="">
+                    <div class="h">BOOKING TICKETS</div>
+                </div>
+                <div class="sl">Tour to Louvre</div>
+                <div class="flex"><div class="cont-inp">
+                    <input type="date" id="datefield" onchange="this.checkValidity()?document.getElementsByClassName('t-date')[0].innerHTML=new Date(this.value).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}):0"><input type="time" step="1800" min="09:00:00" max="18:00:00" onchange="this.checkValidity()?document.getElementsByClassName('t-time')[0].innerHTML=new Date('Thu, 01 Jan 1970 '+this.value).toLocaleTimeString('ru-RU',{hour:'numeric',minute:'2-digit'}):0">
+                </div>
+                <div class="val-wrap"><input type="text" placeholder="Name" pattern="^[A-Za-zА-Яа-я ]{3,15}$" minlength="3" maxlength="15"><span hidden>3-15 букв кириллицы или латиницы, возможен разделитель " "</span></div>
+                <div class="val-wrap"><input type="email" placeholder="E-mail" pattern="^[A-Za-z0-9_-]{3,15}@[A-Za-z]{4,}\.[A-Za-z]{2,}$"><span hidden>Неверный формат: username@example.com</span></div>
+                <div class="val-wrap"><input type="tel" placeholder="Phone" pattern="^((\d{2}([ -]?\d{2})?([ -]?\d{2,3}){0,2})|(\d{2,3}([ -]?\d{2,3})?([ -]?\d{2}){0,2})|(\d{2}([ -]?\d{2,3}){0,2}([ -]?\d{2})?)|(\d{2,3}([ -]?\d{2}){0,2}([ -]?\d{2,3})?)|(\d{2}([ -]?\d{2,3})?([ -]?\d{2})?([ -]?\d{2,3})?)|(\d{2,3}([ -]?\d{2})?([ -]?\d{2,3})?([ -]?\d{2})?)|(\d{2}([ -]?\d{2}){0,4})|(\d{2,3}([ -]?\d{2,3}){0,2})|(\d))$"><span hidden>≥15 цифр, возможны разделители " " и "-" через 2-3 знака</span></div>
+                <select><option value="" disabled selected>Ticket Type</option></select>
+                <div class="cont">
+                    <div class="sh">Entry Ticket</div>
+                    <div class="cont-coun"><label>Basic 18+ (20 €)</label>
+                        <span><button onclick="this.parentNode.querySelector('input').stepDown()" class="sl">–</button><input type="number" id="basic-f" name="basic-f" min="0" max="20"><button onclick="this.parentNode.querySelector('input').stepUp()" class="sl">+</button></span>
+                    </div>
+                    <div class="cont-coun"><label>Senior 65+ (10 €)</label>
+                        <span><button onclick="this.parentNode.querySelector('input').stepDown()" class="sl">–</button><input type="number" id="senior-f" name="senior-f" min="0" max="20"><button onclick="this.parentNode.querySelector('input').stepUp()" class="sl">+</button></span>
+                    </div>
+                </div></div>
+            </div>
+            <div class="right">
+                <div class="overview">
+                    <div class="c1">
+                        <div class="ov-l">Overview</div>
+                        <div class="t-name">Tour to Louvre</div>
+                        <div class="t-date t-meta">----</div>
+                        <div class="t-time t-meta">--:--</div>
+                        <div class="t-type t-meta">Temporary exhibition</div>
+                    </div>
+                    <div class="c2">
+                        <img src="./assets/img/tickets-cr.jpg" alt="">
+                    </div>
+                </div>
+                <div class="money">
+                    <div class="ticket">
+                        <div class="ti-coun">2</div>
+                        <div class="ti-type">Basic (20 €)</div>
+                        <div class="price">40 €</div>
+                    </div>
+                    <div class="ticket">
+                        <div class="ti-coun">2</div>
+                        <div class="ti-type">Senior (10 €)</div>
+                        <div class="price">20 €</div>
+                    </div>
+                    <div class="price-tot">
+                        <div class="p-t-labl">Total:</div>
+                        <div class="p-t-pr">60 €</div>
+                    </div>
+                </div>
+                <div class="ccards">
+                    <div class="card top">
+                        <div class="cdate-cont"><div class="left-cdata">
+                            <div class="cdata-labl">Card number</div>
+                            <input type="number" class="cnum">
+                            <div class="cdata-labl">Expiration date</div>
+                            <div class="cexp-cont">
+                                <input type="number">
+                                <input type="number">
+                            </div>
+                        </div>
+                        <div class="right-cdata">
+                            <img src="./assets/icons/Visa.svg" alt="">
+                            <img src="./assets/icons/Mastercard.svg" alt="">
+                        </div></div>
+                        <div class="cdata-labl">Cardholder name</div>
+                        <input type="text">
+                    </div>
+                    <div class="card bottom">
+                        <div class="mline"></div>
+                        <div class="cvv-cont">
+                            <div class="cvv-l">CVC/CVV</div>
+                            <input type="number">
+                            <div class="cvv-inf">The last<br>3 or 4 digits<br>on back<br>of the card</div>
+                        </div>
+                    </div>
+                </div>
+                <button>Book</button>
+            </div>
+        </form>
+    
+    </div>
+    </div>
+    <button onclick="topFunction()" id="toTop" title="Go to top">▲</button>
+    <main>
+        <section class="dark" id="Welcome">
+            <div class="wrap flex">
+                <div class="left">
+                    <h2>WELCOME<br>TO THE LOUVRE</h2>
+                    <p>From the castle to the museum</p>
+                    <a href="./tours/tour0.html">Discover the Louvre</a>
+                </div>
+                <div class="right">
+                    <div class="slider-w">
+                        <img src="./assets/img/welcome-slider/1.jpg" alt="">
+                        <img src="./assets/img/welcome-slider/2.jpg" alt="">
+                        <img src="./assets/img/welcome-slider/3.jpg" alt="">
+                        <img src="./assets/img/welcome-slider/4.jpg" alt="">
+                        <img src="./assets/img/welcome-slider/5.jpg" alt="">
+                    </div>
+                    <div class="nav-cont">
+                        <span id="e-slider-contr"><button id="e-slider-prev">←</button><button id="e-slider-next">→</button></span>
+                        <div id="e-slider-pos"><div></div><div></div><div></div><div></div><div></div></div>
+                        <span class="counter"><span class=cur>0</span><span>|</span><span class="tot">05</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="wrap" id="Visiting">
+            <h2 class="border">VIRTUAL TOUR</h2>
+            <div class="flex">
+            <a href="./tours/tour1.html" class="tour-i">
+                <img src="./assets/img/visiting/v1.jpg" alt="Royal Palace">
+                <h3>ROYAL PALACE</h3>
+                <p>360° Virtual Tour</p>
+                <p>Google Street Panorama View</p>
+            </a>
+            <a href="./tours/tour2.html" class="tour-i">
+                <img src="./assets/img/visiting/v2.jpg" alt="Denon Wing">
+                <h3>DENON WING</h3>
+                <p>360° Virtual Tour</p>
+                <p>Google Street Panorama View</p>
+            </a>
+            <a href="./tours/tour3.html" class="tour-i">
+                <img src="./assets/img/visiting/v3.jpg" alt="Colonnade Perrault">
+                <h3>COLONNADE PERRAULT</h3>
+                <p>360° Virtual Tour</p>
+                <p>Google Street Panorama View</p>
+            </a>
+            <a href="./tours/tour4.html" class="tour-i">
+                <img src="./assets/img/visiting/v4.jpg" alt="Greek Hall">
+                <h3>GREEK HALL</h3>
+                <p>360° Virtual Tour</p>
+                <p>Google Street Panorama View</p>
+            </a>
+            <a href="./tours/tour5.html" class="tour-i">
+                <img src="./assets/img/visiting/v5.jpg" alt="Mona Lisa">
+                <h3>MONA LISA</h3>
+                <p>360° Virtual Tour</p>
+                <p>Google Street Panorama View</p>
+            </a>
+            <a href="./tours/tour6.html" class="tour-i">
+                <img src="./assets/img/visiting/v6.jpg" alt="Night Palace">
+                <h3>NIGHT PALACE</h3>
+                <p>360° Virtual Tour</p>
+                <p>Google Street Panorama View</p>
+            </a>
+            </div>
+        </section>
+        <section class="dark" id="Explore">
+            <div class="wrap flex">
+                <div class="left">
+                    <h2 class="border">PICTURE EXPLORE</h2>
+                    <div class="cont">
+                        <p>Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
+                        <p>It was cleaned in 1984 to remove a <span style="color:#CAAA7D">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
+                        <p>The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="img-comp-container">
+                        <div class="img-comp-img">
+                          <img src="./assets/img/explore-slider/before.jpg" alt="Las Meninas">
+                        </div>
+                        <div class="img-comp-img img-comp-overlay">
+                          <img src="./assets/img/explore-slider/after.jpg" alt="Las Meninas">
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+        <section class="wrap" id="Video">
+            <div class="flex">
+                <h2>VIDEO JOURNEY</h2>
+                <div class="h-an">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</div>
+            </div>
+            <div class="wrap-v slider-yt-main">
+                <video id="my-video" class="video-js vjs-theme-forest" controls preload="auto" poster="./assets/video/poster0.jpg" data-setup="{}"><source src="./assets/video/video0.mp4" type="video/mp4"/></video>
+                <video id="my-video" class="video-js vjs-theme-forest" controls preload="auto" poster="./assets/video/poster1.jpg" data-setup="{}"><source src="./assets/video/video1.mp4" type="video/mp4"/></video>
+                <video id="my-video" class="video-js vjs-theme-forest" controls preload="auto" poster="./assets/video/poster2.jpg" data-setup="{}"><source src="./assets/video/video2.mp4" type="video/mp4"/></video>
+                <video id="my-video" class="video-js vjs-theme-forest" controls preload="auto" poster="./assets/video/poster3.jpg" data-setup="{}"><source src="./assets/video/video3.mp4" type="video/mp4"/></video>
+                <video id="my-video" class="video-js vjs-theme-forest" controls preload="auto" poster="./assets/video/poster4.jpg" data-setup="{}"><source src="./assets/video/video4.mp4" type="video/mp4"/></video>
+            </div>
+            <div class="flex-v">
+                <div class="slider-yt-thumbs">
+                    <iframe src="https://www.youtube.com/embed/zp1BXPX8jcU" loading="lazy" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Vi5D6FKhRmo" loading="lazy" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/NOhDysLnTvY" loading="lazy" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/aWmJ5DgyWPI" loading="lazy" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/2OR0OCr6uRE" loading="lazy" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="controls">
+                    <button id="yt-prev">«</button>
+                    <div id="yt-nav"><div class="v-i"></div>
+                    <div class="v-i"></div>
+                    <div class="v-i"></div>
+                    <div class="v-i"></div>
+                    <div class="v-i"></div></div>
+                    <button id="yt-next">»</button>
+                </div>
+            </div>
+            <div hidden><input type="range"><input type="range"><button></button><button></button><button></button><button></button></div>
+        </section>
+        <section class="dark" id="Gallery">
+            <div class="wrap">
+                <h2>ART GALLERY</h2>
+                <div class="picture-container">
+                    <div class="picture-inner-container" id="shuffle">
+                    <img src="./assets/img/galery/galery1.jpg" alt="1">
+                    <img src="./assets/img/galery/galery2.jpg" alt="2">
+                    <img src="./assets/img/galery/galery3.jpg" alt="3">
+                    <img src="./assets/img/galery/galery4.jpg" alt="4">
+                    <img src="./assets/img/galery/galery5.jpg" alt="5">
+                    <img src="./assets/img/galery/galery6.jpg" alt="6">
+                    <img src="./assets/img/galery/galery7.jpg" alt="7">
+                    <img src="./assets/img/galery/galery8.jpg" alt="8">
+                    <img src="./assets/img/galery/galery9.jpg" alt="9">
+                    <img src="./assets/img/galery/galery10.jpg" alt="10">
+                    <img src="./assets/img/galery/galery11.jpg" alt="11">
+                    <img src="./assets/img/galery/galery12.jpg" alt="12">
+                    <img src="./assets/img/galery/galery13.jpg" alt="13">
+                    <img src="./assets/img/galery/galery14.jpg" alt="14">
+                    <img src="./assets/img/galery/galery15.jpg" alt="15">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="wrap" id="Tickets">
+            <h2 class="border">BUY TICKETS</h2>
+            <div class="cont flex">
+                <div class="left"></div>
+                <div class="right">
+                    <div class="left">
+                        <b>Ticket Type</b>
+                        <div><input type="radio" id="ttype1" name="ttype" value="20"><label for="ttype1" onclick="saveValueR(this.parentNode.querySelector('input'));">Permanent exhibition</label></div>
+                        <div><input type="radio" id="ttype2" name="ttype" value="25"><label for="ttype2" onclick="saveValueR(this.parentNode.querySelector('input'));">Temporary exhibition</label></div>
+                        <div><input type="radio" id="ttype3" name="ttype" value="40"><label for="ttype3" onclick="saveValueR(this.parentNode.querySelector('input'));">Combined Admission</label></div>
+                    </div>
+                    <div class="right">
+                        <div><b>Amount</b></div>
+                        <div><label for="basic">Basic 18+</label></div>
+                        <div><span><button onclick="this.parentNode.querySelector('input').stepDown();saveValue(this.parentNode.querySelector('input'));" class="sl">–</button><input type="number" id="basic" name="basic" min="0" max="20" onkeyup='saveValue(this);'><button onclick="this.parentNode.querySelector('input').stepUp();saveValue(this.parentNode.querySelector('input'));" class="sl">+</button></span></div>
+                        <div><label for="senior">Senior 65+</label></div>
+                        <div><span><button onclick="this.parentNode.querySelector('input').stepDown();saveValue(this.parentNode.querySelector('input'));" class="sl">–</button><input type="number" id="senior" name="senior" min="0" max="20" onkeyup='saveValue(this);'><button onclick="this.parentNode.querySelector('input').stepUp();saveValue(this.parentNode.querySelector('input'));" class="sl">+</button></span></div>
+                        <div><b class="price">Total €<span class="sumv"></span></b></div>
+                        <div><button class="ripple" onclick="document.getElementById('booking').checked=!document.getElementById('booking').checked;">Buy Now</button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="parallax"></div>
+        <section class="wrap" id="Contacts">
+            <h2 class="border">CONTACTS</h2>
+            <div class="cont">
+                <div class="left">
+                    <b>Palais Royal<br>Musee du Louvre</b>
+                    <p>address: 75001 Paris, France</p>
+                    <p>phone: <a href="tel:+330140205050">+33(0) 1 40 20 50 50</a></p>
+                    <p>mail: <a href="mailto:info@louvre.fr">info@louvre.fr</a></p>
+                </div>
+                <div class="right">
+                    <iframe height='620' src="https://api.mapbox.com/styles/v1/qetqrewtgfdg/ckukn99ex333o17mnkojt4v98.html?title=false&access_token=pk.eyJ1IjoicWV0cXJld3RnZmRnIiwiYSI6ImNrdWtuMzN6MDAxYzMybnBmbm00c2xscmgifQ.dhfSBLSmdK_wc3qcDGW7JQ&zoomwheel=false#16/48.860802/2.336204" title="Louvre" style="border:none;width:100%;float:right" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="dark">
+        <div class="wrap">
+            <div class="logo"><img src="./assets/icons/logo.svg" alt="">LOUVRE</div>
+            <div class="flex cont">
+                <nav>
+                    <ul class="menu">
+                    <li><a href="#Visiting">Visiting</a></li>
+                    <li><a href="#Explore">Explore</a></li>
+                    <li><a href="#Video">Video</a></li>
+                    <li><a href="#Gallery">Gallery</a></li>
+                    <li><a href="#Tickets">Tickets</a></li>
+                    <li><a href="#Contacts">Contacts</a></li>
+                    </ul>
+                </nav>
+                <ul class="social">
+                <li><a href="https://www.youtube.com/user/louvre" class="circle"></a></li>
+                <li><a href="https://www.instagram.com/museelouvre/" class="circle"></a></li>
+                <li><a href="https://www.facebook.com/museedulouvre" class="circle"></a></li>
+                <li><a href="http://twitter.com/museelouvre" class="circle"></a></li>
+                <li><a href="https://www.pinterest.fr/museedulouvre/" class="circle"></a></li>
+                </ul>
+            </div>
+        </div> 
+<div class="wrap-f"><div class="wrap cr">
+    <div class="left">© 2021</div>
+    <div class="center">The Rolling Scopes School</div>
+    <div class="right">Pepe the Ronin</div>
+</div></div>
+    </footer>
+  </body>
+</html>
