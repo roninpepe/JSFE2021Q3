@@ -1,0 +1,65 @@
+.game__favorites {
+    min-height: 750px;
+    width: 400px;
+  }
+  
+  .favorites__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 10px;  
+    width: 100%;
+    padding-top: 25px;
+    padding-left: 25px;
+  }
+  
+  .favorites__container::before {
+    content: "Игрушки";
+    text-align: right;
+  }
+  
+  .favorites__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 84px;
+    min-height: 84px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .5);
+  }
+  
+  .favorites__card::after {
+    content: attr(data-count);
+    align-self: flex-end;  
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    margin-left: 60px;
+    border-radius: 10px;
+    background-color: #278D9F;
+    font-size: 14px;
+    font-weight: 900;
+    pointer-events: none;
+  }
+  
+  .favorites__card-image {
+    position: absolute;
+    display: block;
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    cursor: move;
+  }
+  
+  .favorites__card[data-count="0"] .favorites__card-image {
+    display: none;
+  }
+
+.tree__image-container_active .favorites__card-image {
+  pointer-events: none;
+}

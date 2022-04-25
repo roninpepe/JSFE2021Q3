@@ -1,0 +1,68 @@
+.game__page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  max-width: 1600px;
+  min-height: 750px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.tree {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;  
+  background-image: url("../../../../assets/bg/1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 140px);
+  min-height: 750px;
+  width: 800px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  flex-grow: 2;
+  flex-shrink: 1;
+}
+
+.tree__snow {
+  background-image: url("../../../../assets/snow.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.tree__snow_active {
+  visibility: visible;
+}
+
+.tree__image-container {
+  position: relative;
+}
+
+.tree__image-container,
+.tree__image {
+  display: block;
+  width: 500px;
+  height: 714px;
+}
+
+.favorites__container::before,
+.g-controls__container::before {
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px;
+  text-transform: uppercase;
+  align-self: flex-start;
+  flex-basis: 100%;
+}

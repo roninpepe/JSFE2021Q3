@@ -1,0 +1,173 @@
+.game__controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    height: 100%;
+    padding-top: 25px;
+    max-width: 300px;
+    flex-shrink: 2;
+    flex-grow: 0;
+  }
+  
+  .g-controls__container_trees::before {
+    content: "Выберите ёлку";
+  }
+  .g-controls__container_bg::before {
+    content: "Выберите фон";
+  }
+  .g-controls__container_lights::before {
+    content: "Гирлянда";
+  }
+  
+  .g-controls__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .g-controls__item {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+  
+  .g-controls__container_icons {
+    gap: 40px;
+  }
+  
+  .control-icons__item {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .control-icons__item_active {
+    filter: saturate(1.5) brightness(.8); 
+  }
+  
+  .control-icons__snow {
+    background-image: url("../../../../../assets/svg/snow.svg");
+  }
+  
+  .control-icons__audio {
+    background-image: url("../../../../../assets/svg/audio.svg");
+  }
+  
+  .tree-controls__tree {
+    width: 115px;
+    height: 115px;
+    border-radius: 10px;
+    background-color: #fff7;
+    background-size: auto 110px;
+  }
+  .tree-controls__tree:hover {
+    background-color: #fffb;
+  }
+  
+  .tree-controls__tree_1 {
+    background-image: url("../../../../../assets/tree/1.png");
+  }
+  .tree-controls__tree_2 {
+    background-image: url("../../../../../assets/tree/2.png");
+  }
+  .tree-controls__tree_3 {
+    background-image: url("../../../../../assets/tree/3.png");
+  }
+  .tree-controls__tree_4 {
+    background-image: url("../../../../../assets/tree/4.png");
+  }
+  .tree-controls__tree_5 {
+    background-image: url("../../../../../assets/tree/5.png");
+  }
+  .tree-controls__tree_6 {
+    background-image: url("../../../../../assets/tree/6.png");
+  }
+  
+  .bg-controls__bg {
+    width: 65px;
+    height: 65px;
+    border: 1px solid #cccc;
+    border-radius: 10px;
+    background-color: #fff7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+  
+  .bg-controls__bg_1 {
+    background-image: url("../../../../../assets/bg/1.jpg");
+  }
+  .bg-controls__bg_2 {
+    background-image: url("../../../../../assets/bg/2.jpg");
+  }
+  .bg-controls__bg_3 {
+    background-image: url("../../../../../assets/bg/3.jpg");
+  }
+  .bg-controls__bg_4 {
+    background-image: url("../../../../../assets/bg/4.jpg");
+  }
+  .bg-controls__bg_5 {
+    background-image: url("../../../../../assets/bg/5.jpg");
+  }
+  .bg-controls__bg_6 {
+    background-image: url("../../../../../assets/bg/6.jpg");
+  }
+  .bg-controls__bg_7 {
+    background-image: url("../../../../../assets/bg/7.jpg");
+  }
+  .bg-controls__bg_8 {
+    background-image: url("../../../../../assets/bg/8.jpg");
+  }
+  .bg-controls__bg_9 {
+    background-image: url("../../../../../assets/bg/9.jpg");
+  }
+  .bg-controls__bg_10 {
+    background-image: url("../../../../../assets/bg/10.jpg");
+  }
+  
+  .lights-controls__colors {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .lights-controls__color {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+  .lights-controls__color_multicolor {
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8);
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, #ccc 0 2px 12px;
+  }
+  .lights-controls__color_red {
+    background-color: #F00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+  }
+  .lights-controls__color_blue {
+    background-color: #24E0FF;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 14px;
+  }
+  .lights-controls__color_yellow {
+    background-color: #FF0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 12px;
+  }
+  .lights-controls__color_green {
+    background-color: #ABFF00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+  }
+  .lights-controls__color_off {
+    background-color: #444a;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px;
+  }
