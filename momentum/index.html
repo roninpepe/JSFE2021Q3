@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <input type="checkbox" name="settings" value="settings" class="setting-controller" id="settings" hidden>
+  <input type="checkbox" name="search" value="search" class="setting-controller" id="search" hidden>
+  <input type="checkbox" name="player" value="player" class="setting-controller" id="player" hidden>
+  <input type="checkbox" name="weather" value="weather" class="setting-controller" id="weather" hidden>
+  <input type="checkbox" name="time" value="time" class="setting-controller" id="time" hidden>
+  <input type="checkbox" name="date" value="date" class="setting-controller" id="date" hidden>
+  <input type="checkbox" name="greeting-container" value="greeting-container" class="setting-controller" id="greeting-container" hidden>
+  <input type="checkbox" name="quote-container" value="quote-container" class="setting-controller" id="quote-container" hidden>
+  <input type="radio" name="locale" value="en-US" class="setting-controller" id="en-US" hidden>
+  <input type="radio" name="locale" value="ru-RU" class="setting-controller" id="ru-RU" hidden>
+  <input type="radio" name="locale" value="be-BY" class="setting-controller" id="be-BY" hidden>
+  <input type="radio" name="backgroundSource" value="local" class="setting-controller" id="local" hidden>
+  <input type="radio" name="backgroundSource" value="unsplash" class="setting-controller" id="unsplash" hidden>
+  <input type="radio" name="backgroundSource" value="flickr" class="setting-controller" id="flickr" hidden>
+  <input type="radio" name="searchEngine" value="google" class="setting-controller" id="google" hidden>
+  <input type="radio" name="searchEngine" value="yandex" class="setting-controller" id="yandex" hidden>
+  <input type="radio" name="searchEngine" value="ddg" class="setting-controller" id="ddg" hidden>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+    <div class="search">
+      <input type="text" class="search-field">
+    </div>
+    <div class="weather">
+      <input type="text" class="city" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" />
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="settings-container">
+      <div class="settings">
+        <div class="locale">
+          <label for="en-US" class="pb locale-pb">ENG</label>
+          <label for="ru-RU" class="pb locale-pb">РУС</label>
+          <label for="be-BY" class="pb locale-pb">БЕЛ</label>
+        </div>
+        <div class="background-source">
+          <label for="local" class="pb bg-source-pb">GitHub</label>
+          <label for="unsplash" class="pb bg-source-pb">Unsplash</label>
+          <label for="flickr" class="pb bg-source-pb">flickr</label>
+        </div>
+        <div class="search-engine">
+          <label for="google" class="pb search-pb">Google</label>
+          <label for="yandex" class="pb search-pb">Yandex</label>
+          <label for="ddg" class="pb search-pb">DDG</label>
+        </div>
+        <div class="page-elements">
+          <label for="player" class="pb hide-pb"></label>
+          <label for="search" class="pb hide-pb"></label>
+          <label for="weather" class="pb hide-pb"></label>
+          <label for="time" class="pb hide-pb"></label>
+          <label for="date" class="pb hide-pb"></label>
+          <label for="greeting-container" class="pb hide-pb"></label>
+          <label for="quote-container" class="pb hide-pb"></label>
+        </div>
+        <input type="text" class="user-tags">
+      </div>
+      <label for="settings" class="pb settings-icon"></label>
+    </div>
+    <div class="quote-container">
+      <button class="change-quote"></button>
+      <div>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+  </footer>
+  <script src="./scripts/main.js"></script>
+</body>
+</html>

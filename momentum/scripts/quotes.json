@@ -1,0 +1,44 @@
+{
+	"en-US": [
+		{
+			"text": "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
+			"author": "John F. Woods"
+		},
+		{
+			"text": "Program complexity grows until it exceeds the capability of the programmer who must maintain it.",
+			"author": "Hinds' Law Of Computer Programming"
+		},
+		{
+			"text": "Walking on water and developing software from a specification are easy if both are frozen.",
+			"author": "Edward V. Berard"
+		}
+	],
+	"ru-RU": [
+		{
+			"text": "Пишите код так, как будто сопровождать его будет склонный к насилию психопат, который знает, где вы живёте.",
+			"author": "Джон Вудс"
+		},
+		{
+			"text": "Сложность программы растет пока не превысит способности программиста, обязаного её сопровождать.",
+			"author": "Закон Хайндса Компьютерного Программирования"
+		},
+		{
+			"text": "Ходить по воде и разрабатывать программы, следуя спецификации, очень просто, если они заморожены.",
+			"author": "Эдвард Берард"
+		}
+	],
+	"be-BY": [
+		{
+			"text": "Пішыце код так, як быццам суправаджаць яго будзе схільны да гвалту псіхапат, які ведае, дзе вы жывёце.",
+			"author": "Джон Вудс"
+		},
+		{
+			"text": "Складанасць праграмы расце пакуль яна не перавысіць магчымасці праграміста, абавязанага яе суправаджаць.",
+			"author": "Закон Хайндса Кампутарнага Праграмавання"
+		},
+		{
+			"text": "Хадзіць па вадзе і распрацоўваць праграмы, вынікаючы спецыфікацыі, вельмі проста, калі яны замарожаныя.",
+			"author": "Эдвард Берард"
+		}
+	]
+}
