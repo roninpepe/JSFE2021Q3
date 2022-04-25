@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>christmas-task</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="page">
+  <header class="header">
+    <div class="header__container">
+      <nav class="header__nav-bar">
+        <a class="header__logo pb"></a>
+        <a href="#toys" class="header__nav-link">Игрушки</a>
+        <a href="#game" class="header__nav-link">Ёлка</a>
+      </nav>
+      <div class="header__controls">
+        <div class="header__reset pb">↻</div>
+        <div class="header__fav-count">?</div>
+      </div>      
+    </div>
+  </header>
+  <div class="content main-page" data-page="main-page">    
+    <div class="content__blur">    
+    <div class="main-page__controls controls">
+      <input type="search" class="controls__item controls__search" autocomplete="off" placeholder="Поиск по названию" autofocus />
+      <div class="controls__item controls__filters filters">
+        <div class="controls__title filters__title">Фильтры по значению</div>
+        <div class="filters__item filter filter_buttons filter_shape" data-filter-type="shape">
+          <div class="controls__subtitle">Форма:</div>  
+          <button data-filter="шар" class="filter__button filter_ball"></button>
+          <button data-filter="колокольчик" class="filter__button filter_bell"></button>
+          <button data-filter="шишка" class="filter__button filter_cone"></button>
+          <button data-filter="снежинка" class="filter__button filter_snowflake"></button>
+          <button data-filter="фигурка" class="filter__button filter_toy"></button>
+        </div>
+        <div class="filters__item filter filter_buttons filter_color" data-filter-type="color">
+          <div class="controls__subtitle">Цвет:</div>   
+          <button data-filter="белый" class="filter__button filter_white"></button>
+          <button data-filter="желтый" class="filter__button filter_yellow"></button>
+          <button data-filter="красный" class="filter__button filter_red"></button>
+          <button data-filter="синий" class="filter__button filter_blue"></button>
+          <button data-filter="зелёный" class="filter__button filter_green"></button>
+        </div>
+        <div class="filters__item filter filter_buttons filter_size" data-filter-type="size">
+          <div class="controls__subtitle">Размер:</div> 
+          <button data-filter="большой" class="filter__button filter_big"></button>
+          <button data-filter="средний" class="filter__button filter_medium"></button>
+          <button data-filter="малый" class="filter__button filter_small"></button>
+        </div>
+        <div class="filters__item filter filter_checkbox">
+          <div class="controls__subtitle">Только любимые:</div>
+          <input type="checkbox" class="filter__checkbox filter_favorite" id="filter-favorite" data-filter-type="favorite" />
+          <label for="filter-favorite" class="filter__label"></label> 
+        </div> 
+      </div>
+      <div class="controls__item controls__ranges ranges">
+        <div class="controls__title ranges__title">Фильтры по диапазону</div>
+        <div class="ranges__item range">
+          <span class="controls__subtitle range__title">Количество экземпляров:</span> 
+          <div class="range__container">
+            <output class="range__mark">1</output>
+            <div class="range__slider range__slider_count" data-filter-type="count"></div>
+            <output class="range__mark">12</output>
+          </div>          
+        </div>
+        <div class="ranges__item range">
+          <span class="controls__subtitle range__title">Год приобретения:</span> 
+          <div class="range__container">
+            <output class="range__mark">1940</output>
+            <div class="range__slider range__slider_year" data-filter-type="year"></div>
+            <output class="range__mark">2020</output>
+          </div>          
+        </div>
+      </div>
+      <div class="controls__item controls__sort sort">
+        <div class="controls__title">Сортировка</div>
+        <select class="sort__select">
+          <option selected value="sort-name-max">По названию от «А» до «Я»</option>
+          <option value="sort-name-min">По названию от «Я» до «А»</option>
+          <option value="sort-count-max">По количеству по возрастанию</option>
+          <option value="sort-count-min">По количеству по убыванию</option>
+        </select>
+      </div>
+      <button class="controls__reset">Сброс фильтров</button>
+    </div>
+    <div class="main-page__cards cards"></div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__data">
+        <p class="footer__copyright">©</p>
+        <p class="footer__year">2021</p>
+        <a class="footer__username" href="https://github.com/roninpepe" target="_blank" rel="noopener noreferrer">Pepe the Ronin</a>        
+      </div>
+      <a class="footer___logo" href="https://rs.school/js/" target="_blank" rel="noopener noreferrer"></a>
+    </div>    
+  </footer>
+
+  <template id="__card">
+    <div class="cards__item card pb" toy-num="" data-num="1" bis_skin_checked="1">  
+      <h2 class="card__content card__title"></h2>
+      <img class="card__content card__img" alt="toy">
+      <div class="card__content card__description" bis_skin_checked="1">      
+        <p class="card__count">Количество: <span class="card__count-val"></span></p>
+        <p class="card__year">Год покупки: <span class="card__year-val"></span></p>
+        <p class="card__shape">Форма: <span class="card__shape-val"></span></p>
+        <p class="card__color">Цвет: <span class="card__color-val"></span></p>
+        <p class="card__size">Размер: <span class="card__size-val"></span></p>
+        <p class="card__favorite">Любимая: <span class="card__favorite-val"></span></p>
+      </div>
+      <div class="card__content card__ribbon" bis_skin_checked="1"></div>
+    </div>
+  </template>
+  <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+.controls {
+  display: flex;
+  font-size: 20px;
+  line-height: 40px;
+  flex-direction: column;
+  background-color: rgba(31, 112, 127, 0.3);
+  backdrop-filter: blur(6px);
+  padding: 10px 20px;
+  align-self: flex-end;
+  position: sticky;
+  bottom: 0;
+  min-height: calc(100vh - 140px);
+}
+
+.controls__title {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+}
+
+.controls__subtitle {
+  margin-right: 20px;
+}
+
+.controls__item,
+.range {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls__search {
+  height: 40px;
+  padding: 5px 25px;
+  border-radius: 20px;
+  border: 1px solid #278D9F;
+  color: #fff;
+  font-size: 18px;
+  background-color: rgba(31, 112, 127, .3);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 330px center;
+  backdrop-filter: blur(6px);  
+  outline: 0;
+}
+.controls__search::-webkit-search-cancel-button {
+  background: #f55;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  content: "clear";
+  border-radius: 100%;
+}
+.controls__search::placeholder{
+  color: #aaa;
+}
+.controls__search:placeholder-shown,
+.controls__search:not(:hover):not(:focus) {
+  background-image: url("../../../../../assets/svg/search.svg");
+}
+
+.sort__select {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  width: 380px;
+  height: 40px;
+  padding: 5px 25px;
+  margin: 10px 0;
+  background-color: rgba(31, 112, 127, 0.3);
+  background-image: url('../../../../../assets/svg/arrow-down.svg');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 340px center;
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  border: 1px solid #278d9f;
+  font-size: 20px;
+  line-height: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+.sort__select option {
+  color: inherit;
+  background-color: #183e42;
+}
+.sort__select:focus {
+  outline: none;
+}
+
+.ranges {
+  gap: 10px;
+}
+
+.range {
+  gap: 30px;
+}
+
+.range__mark {
+  margin: 10px 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  height: 40px;
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  border: 1px solid #278d9f;
+}
+
+.range__slider {
+  display: inline-block;
+  height: 6px !important;
+  flex-grow: 1;
+}
+
+.range__container {
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.filters__item,
+.range__container {
+  display: flex;
+  align-items: center;
+}
+
+.filter_shape .filter__button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 10px 7px;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.filter_shape .filter__button:hover {
+  filter: invert(20%);
+}
+.filter_shape .filter__button_active {
+  filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
+}
+.filter_ball {
+  background-image: url('../../../../../assets/svg/ball.svg');
+  margin-left: 20px;
+}
+.filter_bell {
+  background-image: url('../../../../../assets/svg/bell.svg');
+}
+.filter_cone {
+  background-image: url('../../../../../assets/svg/cone.svg');
+}
+.filter_snowflake {
+  background-image: url('../../../../../assets/svg/snowflake.svg');
+}
+.filter_toy {
+  background-image: url('../../../../../assets/svg/toy.svg');
+}
+
+.filter_color .filter__button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 15px 10px;
+  border: 1px solid #278d9f;
+  border-radius: 5px;
+  outline: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.filter_color .filter__button:hover {
+  border-color: #ccc;
+}
+.filter__button_active.filter_white {
+  border-color: #fff;
+}
+.filter_color .filter__button_active.filter_yellow {
+  border-color: #fdd700;
+}
+.filter_color .filter__button_active.filter_red {
+  border-color: #fd0000;
+}
+.filter_color .filter__button_active.filter_blue {
+  border-color: #2199eb;
+}
+.filter_color .filter__button_active.filter_green {
+  border-color: #08aa05;
+}
+.filter_color .filter__button_active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+.filter_white.filter__button_active::after {
+  border-color: #666;
+}
+.filter_color .filter_white {
+  background-color: #fff;
+}
+.filter_color .filter_yellow {
+  background-color: #fdd700;
+}
+.filter_color .filter_red {
+  background-color: #fd0000;
+}
+.filter_color .filter_blue {
+  background-color: #2199eb;
+}
+.filter_color .filter_green {
+  background-color: #08aa05;
+}
+
+.filter_size .filter__button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 5px 5px;
+  border: 0;
+  outline: 0;
+  background-image: url('../../../../../assets/svg/ball.svg');
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.filter_size .filter__button:hover {
+  filter: invert(20%);
+}
+.filter_size .filter__button_active {
+  filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
+}
+.filter_size .filter_medium {
+  background-size: 40px 40px;
+}
+.filter_size .filter_small {
+  background-size: 32px 32px;
+}
+
+.filter_checkbox {
+  height: 60px;
+  margin: 0;
+}
+
+.filter__checkbox {
+  width: initial;
+  height: initial;
+  display: none;
+}
+
+.filter__label {
+  position: relative;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  backdrop-filter: blur(6px);
+  border: 1px solid #278d9f;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.filter__label:hover {
+  background-color: #278d9f;
+}
+
+.filter__checkbox:checked + .filter__label {
+  background-color: #278d9f;
+  border-color: #278d9f;
+}
+
+.filter__checkbox:checked + .filter__label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+
+.controls__reset {
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: 1px solid #278d9f;
+  background-color: rgba(31, 112, 127, 0.3);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+}
