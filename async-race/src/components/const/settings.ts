@@ -1,0 +1,33 @@
+import { Order, Sort } from '../types/async-race';
+
+class Settings {
+  SERVER = 'http://127.0.0.1:3000/';
+
+  DEFAULT_SORT: Sort = Sort.ID;
+
+  DEFAULT_ORDER: Order = Order.ASC;
+
+  DEFAULT_GARAGE_ITEMS_PER_PAGE = 7;
+
+  DEFAULT_WINNERS_ITEMS_PER_PAGE = 10;
+
+  DEFAULT_ITEMS_PER_GENERATION = 100;
+
+  GARAGE_ITEMS_PER_PAGE = 7;
+
+  WINNERS_ITEMS_PER_PAGE = 10;
+
+  DELETED_ITEM_NAME = '[deleted]';
+
+  DELETED_ITEM_COLOR = 'rgb(0,0,0)';
+
+  MAX_RGB_CHANNEL_VALUE = 256;
+
+  DEFAULT_INIT_VALUE = 1;
+
+  ANIMATION_DURATION_COEFFICIENT = 1000;
+
+  RACE_TIME_ORDER = 2;
+}
+
+export default Settings;
